@@ -1,11 +1,11 @@
-from flask import Flask, request
+from flask import Flask, request, logging
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return request.args.get("param", "paramで表示したい値を入力してください。")
-
+    app.logger.warn("hoge")
+    return "hoge"
 
 if __name__ == "__main__":
     app.run()
